@@ -33,7 +33,7 @@ const testerArray = [
   [1, 1],
   [90, 7],
   [55, 10],
-]; 
+];
 
 /** 
  * Polycarpus works as a DJ in the best Berland nightclub, and he often uses dubstep music in his performance. Recently, he has decided to take a couple of old songs and make dubstep remixes from them.
@@ -55,11 +55,10 @@ songDecoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB")
   // =>  WE ARE THE CHAMPIONS MY FRIEND
 */
 
-function songDecoder(song){
-  console.log(song.replace(/(WUB)+/g," ").trim())
-  return song.replace(/(WUB)+/g," ").trim()
+function songDecoder(song) {
+  console.log(song.replace(/(WUB)+/g, " ").trim());
+  return song.replace(/(WUB)+/g, " ").trim();
 }
-
 
 /** 
 Create a function named divisors/Divisors that takes an integer n > 1 and returns
@@ -68,11 +67,11 @@ from smallest to largest. If the number is prime return the string '(integer) is
 */
 
 function divisors(integer) {
-  var res = []
-  for (var i = 2; i <= Math.floor(integer / 2); ++i) if (integer % i == 0) res.push(i);
-  return res.length ? res : integer + ' is prime'
-};
-
+  var res = [];
+  for (var i = 2; i <= Math.floor(integer / 2); ++i)
+    if (integer % i == 0) res.push(i);
+  return res.length ? res : integer + " is prime";
+}
 
 /**In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
 
@@ -89,9 +88,122 @@ Output string must be two numbers separated by a single space, and highest numbe
 
 function highAndLow(numbers) {
   // ...
-   let x = Math.max(...numbers.split(" "));
-    let y = Math.min(...numbers.split(" "));
-    return(`${x} ${y}`);
+  let x = Math.max(...numbers.split(" "));
+  let y = Math.min(...numbers.split(" "));
+  return `${x} ${y}`;
+}
+/**Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+
+Examples input/output:
+
+XO("ooxx") => true
+XO("xooxx") => false
+XO("ooxXm") => true
+XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+XO("zzoo") => false */
+
+function XO(str) {
+  let x = 0;
+  let y = 0;
+  let string = str.toLowerCase();
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === "x") x++;
+    else if (string[i] === "o") y++;
+  }
+  if (x === y) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
 }
 
-highAndLow("4 5 29 54 4 0 -214 542 -64 1 -3 6 -6");
+function XO(str) {
+  let x = str.match(/x/gi);
+  let o = str.match(/o/gi);
+  return (x && x.length) === (o && o.length);
+}
+
+/**
+ * Build Tower by the following given argument:
+number of floors (integer and always greater than 0).
+
+Tower block is represented as *
+for example, a tower of 3 floors looks like below
+
+[
+  '  *  ', 
+  ' *** ', 
+  '*****'
+]
+
+I noticed that with each level the amount of stars is just
+the level number with the loop increment. 
+
+naive attempt:
+
+function towerBuilder(nFloors) {
+  // build here
+    let tower = [];
+    let space = " ";
+    let star = "*";
+
+    for (i = 0; i < nFloors; i++){
+        let padding = "";
+        let stars = "";
+        let amountOfStars = nFloors - stars.length -i;
+        
+        while (amountOfStars > 0) {
+            stars += star;
+            amountOfStars--;
+        }
+
+        let amountOfSpace = nFloors - stars.length;
+        while (amountOfSpace > 0) {
+            padding += space;
+            amountOfSpace--;
+        }
+        debugger;
+        
+        tower.unshift(padding);
+        tower.unshift(stars);
+        tower.unshift(padding);
+        tower.join('');
+    }
+
+   console.log(tower);
+}
+*/
+function towerBuilder(n) {
+  return Array.from({ length: n }, function (v, k) {
+    const spaces = " ".repeat(n - k - 1);
+    console.log(spaces + "*".repeat(k + k + 1) + spaces);
+  });
+}
+
+/**
+ * Task
+You've just moved into a perfectly straight street with exactly n identical 
+houses on either side of the road. Naturally, you would like to find out the
+ house number of the people on the other side of the street. The street looks 
+ something like this:
+
+Street
+1|   |6
+3|   |4
+5|   |2
+Evens increase on the right; odds decrease on the left. 
+House numbers start at 1 and increase without gaps. 
+When n = 3, 1 is opposite 6, 3 opposite 4, and 5 opposite 2.
+
+Example
+Given your house number address and length of street n, 
+give the house number on the opposite side of the street.
+
+overTheRoad(address, n)
+overTheRoad(1, 3) = 6
+overTheRoad(3, 3) = 4
+overTheRoad(2, 3) = 5
+overTheRoad(3, 5) = 8 */
+function overTheRoad(address, n) {
+  return n * 2 + 1 - address;
+}
