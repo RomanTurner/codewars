@@ -118,3 +118,34 @@ const total = people.reduce(function (acc, currItem) {
 //const result2 = Math.max(4, 5, 6, 8, 3);
 
 //const result = Math.floor(Math.random() * 10 + 1);
+
+
+
+
+
+const sheeple = [
+  { name: "bob", age: 20, position: "developer", id: 1, salary: 200 },
+  { name: "peter", age: 25, position: "designer", id: 2, salary: 300 },
+  { name: "susy", age: 30, position: "the boss", id: 3, salary: 500 },
+  { name: "anna", age: 35, position: "senior developer", id: 4, salary: 500 },
+];
+
+
+function showPerson(person) {
+   console.log(person.position.replaceAll("d", "Yeet")); 
+}
+
+sheeple.forEach(showPerson);
+//Look at the data that you are grabbing, in the call back you can manipulate
+//it with other built in methods. In this case it is accessing a string and using a string method. 
+
+sheeple.forEach(function (person) {
+  console.log(person.position.toUpperCase());
+});
+
+const sages = sheeple.map(function (person) {
+  console.log(person);
+  return person.age + 500;
+});
+
+console.log(sages);
