@@ -45,6 +45,7 @@ function towerBuilder(nFloors) {
         tower.join('');
     }
 
+
    console.log(tower);
 }
 */
@@ -54,3 +55,4 @@ function towerBuilder(n) {
     console.log(spaces + "*".repeat(k + k + 1) + spaces);
   });
 }
+
