@@ -1,4 +1,5 @@
 /*
+? Purposefully verbose answer
 * Description:
     The input is a string str of digits. Cut the string into chunks (a chunk here is a 
     substring of the initial string) of size sz(ignore the last chunk if its size is less than sz).
@@ -21,7 +22,7 @@
 * Examples:
      let s = "733049910872815764";
      revrot(s, 5) # => => "330479108928157"
-     
+
      revrot("123456987654", 6)  # => =>  "234561876549"
      revrot("123456987653", 6)  # => =>  "234561356789"
      revrot("66443875", 4)  # => =>  "44668753"
