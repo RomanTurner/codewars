@@ -33,6 +33,7 @@ def solution(string)
   string.gsub(/(?=[A-Z])/, ' ')
 end
 
+#regex free, ez to read
 def solution(string)
   string.chars.map { |s| s == s.downcase ? s : " #{s}" }.join
 end
