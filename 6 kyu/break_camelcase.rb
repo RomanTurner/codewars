@@ -24,7 +24,7 @@ def solution(string)
 }
 newString
 end
-
+#https://stackoverflow.com/questions/15825872/ruby-regex-what-does-the-1-mean-for-gsub
 def solution(string)
   string.gsub /([A-Z])/, ' \1'
 end
