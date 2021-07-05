@@ -31,14 +31,12 @@ pig_it('Hello world !')     # elloHay orldway !
         private 
 
         def is_punctuation?(letter)
-         letter.match(/[[:punct:]]/)
+         word.match(/[[:punct:]]/)
         end
 
     end
 
-git add . 
-git commit -m 'kata'
-git push
+
 
   # check if everything is punctuation 
   # cut the first letter off
