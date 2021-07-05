@@ -36,7 +36,9 @@ pig_it('Hello world !')     # elloHay orldway !
 
     end
 
-
+git add . 
+git commit -m 'kata'
+git push
 
   # check if everything is punctuation 
   # cut the first letter off
