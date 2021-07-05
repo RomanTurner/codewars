@@ -31,7 +31,7 @@ pig_it('Hello world !')     # elloHay orldway !
         private 
 
         def is_punctuation?(word)
-         word[0].match(/[[:punct:]]/)
+         word.match(/[[:punct:]]/)
         end
 
     end
