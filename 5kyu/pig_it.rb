@@ -1,6 +1,5 @@
 =begin
-Move the first letter
-of each word to the end of it,
+Move the first letter of each word to the end of it,
 then add "ay" to the end of the word. 
 Leave punctuation marks untouched.
 
@@ -21,17 +20,24 @@ pig_it('Hello world !')     # elloHay orldway !
         end
 
         def piginit
-         @sentance[0].is_punctuation?
+         @sentance.each do |word|
+            first = word[0]
+            last = word[-1]
+            if is_punctuation?(first) && is_punctuation?(last)
+                word[0] = last
+                word[-1] = add_ay(first)
+            end
+          end
         end
 
-        def add_ay(word)
-         word + 'ay'
+        def add_ay(letter)
+         letter + 'ay'
         end 
 
         private 
 
-        def is_punctuation?(word)
-         word.match(/[[:punct:]]/)
+        def is_punctuation?(letter)
+         letter.match(/[[:punct:]]/)
         end
 
     end
