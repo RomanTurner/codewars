@@ -36,7 +36,10 @@ pig_it('Hello world !')     # elloHay orldway !
           end
         end
 
-      
+        def add_ay(letter)
+         letter + 'ay'
+        end 
+
         private 
 
         def is_punctuation?(letter)
