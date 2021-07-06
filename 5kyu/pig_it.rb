@@ -23,17 +23,20 @@ pig_it('Hello world !')     # elloHay orldway !
          @sentance.each do |word|
             first = word[0]
             last = word[-1]
-            if is_punctuation?(first) && is_punctuation?(last)
+            secondLast = word[-2]
+            if is_punctuation?(first)
                 word[0] = last
+            end
+            if is_punctuation?(last)
                 word[-1] = add_ay(first)
+            end
+            if is_punctuation?(secondLast)
+            
             end
           end
         end
 
-        def add_ay(letter)
-         letter + 'ay'
-        end 
-
+      
         private 
 
         def is_punctuation?(letter)
