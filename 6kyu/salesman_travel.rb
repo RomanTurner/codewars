@@ -1,11 +1,10 @@
 =begin
     Task
-The function travel will take two parameters r (addresses' list of all clients' as a string) and zipcode and returns a string in the following format:
+The function travel will take two parameters r (addresses' list of all clients' as a string)
+ and zipcode and returns a string in the following format:
 
 zipcode:street and town,street and town,.../house number,house number,...
-
 The street numbers must be in the same order as the streets where they belong.
-
 If a given zipcode doesn't exist in the list of clients' addresses return "zipcode:/"
 
 Examples
