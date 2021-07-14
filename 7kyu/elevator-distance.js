@@ -19,4 +19,11 @@ Array will always contain at least 2 floors. Random tests
 will contain 2-20 elements in array, and floor values between 0 and 30.
  */
 
+function elevatorDistance(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length - 1; i++) {
+    sum += Math.abs(arr[i] - arr[i + 1]);
+  }
+  return sum;
+}
 
