@@ -26,4 +26,7 @@ function elevatorDistance(arr) {
   }
   return sum;
 }
+ 
+
+
 
