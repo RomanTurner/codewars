@@ -27,3 +27,7 @@ function elevatorDistance(arr) {
   return sum;
 }
 
+git add .
+git commit -m 'cw'
+git push 
+
