@@ -29,4 +29,3 @@ function elevatorDistance(arr) {
  
 
 
-
