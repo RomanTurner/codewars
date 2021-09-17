@@ -1,9 +1,13 @@
+function laundry(amount, dirtyTowels) {
+  return dirtyTowels.slice(-amount).sort((a, b) => b.localeCompare(a));
+}
+
 function sortThePile(pileOfTowels, weeklyUsedTowels) {
   // Weekly used towels is [2, 2, 1] array of non negative numbers;
   for (let i = 0; i < weeklyUsedTowels.length; i++) {
     let t = weeklyUsedTowels[i];
     let topOfPile = pileOfTowels.length - t;
-    let freshTowels = pileOfTowels.slice(-t).sort((a, b) => b.localeCompare(a));
+    let freshTowels = laundry(t, pileOfTowels);
     pileOfTowels.splice(topOfPile, t, ...freshTowels);
   }
 
